@@ -33,11 +33,15 @@ access to the dictionary's key-value pairs:
     Java, C/C++, C#, Perl etc.)
 
 
+Install using pip:
+
+    python3 -m pip install https://github.com/nephics/dbdict/archive/main.zip
+
 Use it like a standard dictionary, except that you give it a name
 (eg.'tempdict'):
 
-    import dbdict
-    d = dbdict.dbdict('tempdict')
+    from dbdict import dbdict
+    d = dbdict('tempdict')
     d['foo'] = 'bar'
     # At this point, the key value pair foo and bar is written to disk.
     d['John'] = 'doh!'
@@ -48,7 +52,7 @@ Use it like a standard dictionary, except that you give it a name
 
 You can access your dictionary later on:
 
-    d = dbdict.dbdict('tempdict')
+    d = dbdict('tempdict')
     del d['foo']
 
     if 'John' in d:
@@ -72,13 +76,7 @@ by a list of keys:
 
     d.remove(['f1', 'f2'])
 
-There is also an alternative (fully equivalent) way to instanstiate a dbdict
-object by the call:
-
-    from dbdict import dbdict
-    d = dbdict('tempdict')
-
-Make a memory-based (ie not filed based) SQLite database by the call:
+Create a memory-based (ie not filed based) SQLite database by the call:
 
     dbdict(':memory:')
 
