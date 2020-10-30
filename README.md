@@ -37,7 +37,7 @@ Use it like a standard dictionary, except that you give it a name
 (eg.'tempdict'):
 
     import dbdict
-    d = dbdict.open('tempdict')
+    d = dbdict.dbdict('tempdict')
     d['foo'] = 'bar'
     # At this point, the key value pair foo and bar is written to disk.
     d['John'] = 'doh!'
@@ -48,7 +48,7 @@ Use it like a standard dictionary, except that you give it a name
 
 You can access your dictionary later on:
 
-    d = dbdict.open('tempdict')
+    d = dbdict.dbdict('tempdict')
     del d['foo']
 
     if 'John' in d:
